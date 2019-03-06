@@ -1,0 +1,49 @@
+name:                hui
+version:             0.1.0.0
+github:              "agcwall/hui"
+license:             BSD3
+author:              "Adam Wall"
+maintainer:          "agcwall@gmail.com"
+copyright:           "2019 Adam Wall"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/agcwall/hui#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- gtk
+- mtl
+
+library:
+  source-dirs: src
+
+executables:
+  demo-paint-exe:
+    main:                DemoPaint.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - hui
+
+  demo-text-exe:
+    main:                DemoText.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - hui
