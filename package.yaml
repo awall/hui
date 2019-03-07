@@ -21,29 +21,36 @@ description:         Please see the README on GitHub at <https://github.com/agcw
 
 dependencies:
 - base >= 4.7 && < 5
-- gtk
+- gtk3
 - mtl
+- cairo
+- text
+- glib
+- Win32
+- containers
 
 library:
   source-dirs: src
 
 executables:
-  demo-paint-exe:
+  demo-paint:
     main:                DemoPaint.hs
     source-dirs:         app
     ghc-options:
     - -threaded
     - -rtsopts
     - -with-rtsopts=-N
+    - -main-is DemoPaint
     dependencies:
     - hui
 
-  demo-text-exe:
+  demo-text:
     main:                DemoText.hs
     source-dirs:         app
     ghc-options:
     - -threaded
     - -rtsopts
     - -with-rtsopts=-N
+    - -main-is DemoText
     dependencies:
     - hui

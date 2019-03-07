@@ -20,7 +20,7 @@ main = do
 
 drawAll :: Auto Event Draw
 drawAll = proc e -> do
-  Size w h <- windowBounds -< e
+  Rect _ (XY w h) <- windowBounds -< e
 
   let b1 = Rect (XY 0.0  10.0) (XY 150.0  30.0)
   let b2 = Rect (XY 0.0  60.0) (XY 150.0  80.0)
@@ -55,7 +55,7 @@ textBoxWidget = proc (Rect (XY l t) (XY r b), e, hasFocus) -> do
                 Hairo.showText te
                 Hairo.restore
 
-bounds :: Auto Event Size
+bounds :: Auto Event XY
 bounds = proc e -> do
   remember undefined -< paints e
 

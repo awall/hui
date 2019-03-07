@@ -87,7 +87,7 @@ wndProc lpps ref hwnd msg wParam lParam
                                      return 0
 
   | msg == Win32.wM_PAINT       = do (_,_,w,h) <- Win32.getClientRect hwnd
-                                     draw <- process ref $ EPaint (Size (fromIntegral w) (fromIntegral h))
+                                     draw <- process ref $ EPaint (XY (fromIntegral w) (fromIntegral h))
                                      paintFrame draw lpps hwnd (w,h)
                                      return 0
 

@@ -17,7 +17,12 @@
 #
 # resolver: ./custom-snapshot.yaml
 # resolver: https://example.com/snapshots/2018-01-01.yaml
-resolver: lts-13.10
+# resolver: lts-13.10
+# resolver: ghc-7.10.2
+# resolver: ghc-8.6.4
+resolver: lts-12.14
+
+allow-newer: true
 
 # User packages to be built.
 # Various formats can be used as shown in the example below.
@@ -38,13 +43,17 @@ packages:
 # using the same syntax as the packages field.
 # (e.g., acme-missiles-0.3)
 extra-deps:
-- gtk-0.15.2
+- gtk3-0.15.1
 - cairo-0.13.6.0
 - gio-0.13.6.0
 - glib-0.13.7.0
 - gtk2hs-buildtools-0.13.5.0
 - pango-0.13.6.0
-- hgettext-0.1.30
+- Win32-2.6.1.0
+- containers-0.5.11.0
+- utf8-string-0.3.8
+#- hgettext-0.1.30
+
 
 # Override default flag values for local packages and extra-deps
 # flags: {}

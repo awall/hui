@@ -20,8 +20,8 @@ foreign import ccall "cairo.h cairo_new_sub_path"
 newSubPath :: Cairo.Render ()
 newSubPath = liftRender0 $ cairo_new_sub_path . unCairo
 
---showText :: Text -> Draw
---showText = Cairo.showText
+showText :: Text -> Draw
+showText = Cairo.showText
 
 save :: Draw
 save = Cairo.save

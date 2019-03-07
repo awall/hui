@@ -10,8 +10,11 @@ import Hui.Hairo(Draw)
 import Control.Monad.Trans (liftIO)
 import Data.IORef
 
+
 import qualified Graphics.UI.Gtk as G
+-- import qualified Graphics.UI.Gtk.Windows as G (windowHasResizeGrip)
 import qualified System.Glib.UTFString as G (glibToString)
+
 
 
 mainLoop :: Auto Event Draw -> IO ()
@@ -23,7 +26,7 @@ mainLoop auto = do
     liftIO G.mainQuit
     return False
   G.widgetSetAppPaintable window True
-  G.set window [ G.windowHasResizeGrip G.:= False ]
+  G.set window [ G.windowResizable G.:= False ]
   G.windowSetDefaultSize window 500 500
   G.widgetShowAll window
   G.mainGUI
